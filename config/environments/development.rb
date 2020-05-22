@@ -1,4 +1,4 @@
-FRONT_END = 'http://192.168.0.7:8080'
+FRONT_END = '*'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
