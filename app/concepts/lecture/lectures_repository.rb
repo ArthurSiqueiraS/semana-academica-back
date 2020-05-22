@@ -1,0 +1,2 @@
+class LecturesRepository < CollectionRepository
+end

@@ -1,0 +1,365 @@
+pt-BR:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'A validação falhou: %{errors}'
+        restrict_dependent_destroy:
+          has_one: Não é possível excluir o registro pois existe um %{record} dependente
+          has_many: Não é possível excluir o registro pois existem %{record} dependentes
+  date:
+    abbr_day_names:
+    - Dom
+    - Seg
+    - Ter
+    - Qua
+    - Qui
+    - Sex
+    - Sáb
+    abbr_month_names:
+    -
+    - Jan
+    - Fev
+    - Mar
+    - Abr
+    - Mai
+    - Jun
+    - Jul
+    - Ago
+    - Set
+    - Out
+    - Nov
+    - Dez
+    day_names:
+    - Domingo
+    - Segunda-feira
+    - Terça-feira
+    - Quarta-feira
+    - Quinta-feira
+    - Sexta-feira
+    - Sábado
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d de %B de %Y"
+      short: "%d de %B"
+    month_names:
+    -
+    - Janeiro
+    - Fevereiro
+    - Março
+    - Abril
+    - Maio
+    - Junho
+    - Julho
+    - Agosto
+    - Setembro
+    - Outubro
+    - Novembro
+    - Dezembro
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: aproximadamente 1 hora
+        other: aproximadamente %{count} horas
+      about_x_months:
+        one: aproximadamente 1 mês
+        other: aproximadamente %{count} meses
+      about_x_years:
+        one: aproximadamente 1 ano
+        other: aproximadamente %{count} anos
+      almost_x_years:
+        one: quase 1 ano
+        other: quase %{count} anos
+      half_a_minute: meio minuto
+      less_than_x_minutes:
+        one: menos de um minuto
+        other: menos de %{count} minutos
+      less_than_x_seconds:
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
+      over_x_years:
+        one: mais de 1 ano
+        other: mais de %{count} anos
+      x_days:
+        one: 1 dia
+        other: "%{count} dias"
+      x_minutes:
+        one: 1 minuto
+        other: "%{count} minutos"
+      x_months:
+        one: 1 mês
+        other: "%{count} meses"
+      x_years:
+        one: 1 ano
+        other: "%{count} anos"
+      x_seconds:
+        one: 1 segundo
+        other: "%{count} segundos"
+    prompts:
+      day: Dia
+      hour: Hora
+      minute: Minuto
+      month: Mês
+      second: Segundo
+      year: Ano
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: deve ser aceito
+      blank: não pode ficar em branco
+      present: deve ficar em branco
+      confirmation: não é igual a %{attribute}
+      empty: não pode ficar vazio
+      equal_to: deve ser igual a %{count}
+      even: deve ser par
+      exclusion: não está disponível
+      greater_than: deve ser maior que %{count}
+      greater_than_or_equal_to: deve ser maior ou igual a %{count}
+      inclusion: não está incluído na lista
+      invalid: não é válido
+      less_than: deve ser menor que %{count}
+      less_than_or_equal_to: deve ser menor ou igual a %{count}
+      model_invalid: 'A validação falhou: %{errors}'
+      not_a_number: não é um número
+      not_an_integer: não é um número inteiro
+      odd: deve ser ímpar
+      required: é obrigatório(a)
+      taken: já está em uso
+      too_long:
+        one: 'é muito longo (máximo: 1 caracter)'
+        other: 'é muito longo (máximo: %{count} caracteres)'
+      too_short:
+        one: 'é muito curto (mínimo: 1 caracter)'
+        other: 'é muito curto (mínimo: %{count} caracteres)'
+      wrong_length:
+        one: não possui o tamanho esperado (1 caracter)
+        other: não possui o tamanho esperado (%{count} caracteres)
+      other_than: deve ser diferente de %{count}
+    template:
+      body: 'Por favor, verifique o(s) seguinte(s) campo(s):'
+      header:
+        one: 'Não foi possível gravar %{model}: 1 erro'
+        other: 'Não foi possível gravar %{model}: %{count} erros'
+  helpers:
+    select:
+      prompt: Por favor selecione
+    submit:
+      create: Criar %{model}
+      submit: Salvar %{model}
+      update: Atualizar %{model}
+  number:
+    currency:
+      format:
+        delimiter: "."
+        format: "%u %n"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: R$
+    format:
+      delimiter: "."
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion:
+            one: bilhão
+            other: bilhões
+          million:
+            one: milhão
+            other: milhões
+          quadrillion:
+            one: quatrilhão
+            other: quatrilhões
+          thousand: mil
+          trillion:
+            one: trilhão
+            other: trilhões
+          unit: ''
+      format:
+        delimiter: ""
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+          pb: PB
+          eb: EB
+    percentage:
+      format:
+        delimiter: "."
+        format: "%n%"
+    precision:
+      format:
+        delimiter: "."
+  support:
+    array:
+      last_word_connector: " e "
+      two_words_connector: " e "
+      words_connector: ", "
+  time:
+    am: ''
+    formats:
+      default: "%a, %d de %B de %Y, %H:%M:%S %z"
+      long: "%d de %B de %Y, %H:%M"
+      short: "%d  de %B, %H:%M"
+    pm: ''
+
+  # Custom
+
+  encaminhado_unidade: encaminhamento a uma unidade
+
+  situation:
+    light: Suspeito Leve
+    serious: Suspeito Grave
+    uncertain: Suspeito em dúvida
+    not_urgent: Não urgente
+    almost_urgent: Pouco urgente
+    urgent: Urgente
+    very_urgent: Muito urgente
+    emergency: Emergência
+
+  kinds:
+    artistic: Artística
+    bibliographic: Bibliográfica
+    technical: Técnica
+    orientation: Orientação
+
+  types:
+    artistic:
+      performing_arts: Artes Cênicas
+      visual_arts: Artes Visuais
+      music: Música
+      other: Outra Produção Cultural
+    bibliographic:
+      article: Artigo
+      book: Livro
+      book_section: Capítulo de Livro
+      other: Outro
+      music_sheet: Partitura Musical
+      translation: Tradução
+    technical:
+      presentation: Apresentação de Trabalho
+      maps_mail_and_derivatives: Cartas, Mapas ou Similares
+      short_duration_course: Curso de Curta Duração
+      app_development: Desenvolvimento de Aplicativo
+      educational_and_instructional_material_development: Desenvolvimento de Material Didático e Instrucional
+      product_development: Desenvolvimento de Produto
+      technic_development: Desenvolvimento de Técnica
+      edition: Editoria
+      artistic_work_maintenance: Manutenção de Obra Artística
+      model: Maquete
+      event_organization: Organização de Evento
+      others: Outro
+      patent: Patente
+      tv_or_radio_show: Programa de Rádio ou Tv
+      research_report: Relatório de Pesquisa
+      technical_service: Serviços Técnicos
+    orientation:
+      article: Artigo
+      composition: Composição
+      concert: Concerto
+      app_development: Desenvolvimento de Aplicativo
+      dissertation: Dissertação
+      edition: Editoria
+      case_study: Estudo de Caso
+      equipment_or_kit: Equipamento ou Kit
+      technical_operation_manual: Manual de Operação Técnica
+      educational_and_instructional_material: Material Didático e Instrucional
+      other: Outros
+      patent: Patente
+      creation_process: Processo de Criação
+      artistic_production: Produção Artística
+      media_program_production: Produção de Programas de Mídia
+      product_technic_or_process: Produto, Processo ou Técnica
+      technological_application_and_adaptation_project: Projeto de Aplicação ou Adequação Tecnológica
+      technological_innovation_project: Projeto de Inovação Tecnológica
+      technical_project: Projeto Técnico
+      proposed_intervention_in_clinical_procedures: Proposta de Intervenção em Procedimentos Clínicos ou de Serviço Pertinente
+      experimental_protocol_or_application_in_services: Protocolo Experimental ou de Aplicação em Serviços
+      pedagogical_proposal: Proposta Pedagógica
+      prototype_or_proposal_of_instruments_production: Protótipo para Desenvolvimento ou Produção de Instrumentos
+      technological_publication: Publicação Tecnológica
+      intelectual_property_registration: Registro de Propriedade Intelectual
+      final_research_report: Relatório Final de Pesquisa
+      technical_report_with_non_disclosure_rules: Relatório Técnico com Regras de Sigilo
+      systematic_bibliographic_survey: Revisão Sistemática e Aprofundada da Literaturao
+      software: Software
+      thesis: Tese
+
+  lattes_types:
+    # artistic
+    APRESENTACAO_DE_OBRA_ARTISTICA: performing_arts
+    OBRA_DE_ARTES_VISUAIS: visual_arts
+    COMPOSICAO_MUSICAL: music
+    # bibliographic
+    TRABALHO_EM_EVENTOS: article_conference
+    ARTIGO_PUBLICADO: article_journal
+    ARTIGO_ACEITO_PARA_PUBLICACAO: article_journal
+    TEXTO_EM_JORNAL_OU_REVISTA: magazine_or_newspaper
+    LIVRO_PUBLICADO_OU_ORGANIZADO: book
+    CAPITULO_DE_LIVRO_PUBLICADO: book_section
+    PARTITURA_MUSICAL: music_sheet
+    TRADUCAO: translation
+    # technical
+    APRESENTACAO_DE_TRABALHO: presentation
+    CARTA_MAPA_OU_SIMILAR: maps_mail_and_derivatives
+    CURSO_DE_CURTA_DURACAO_MINISTRADO: short_duration_course
+    SOFTWARE: app_development
+    DESENVOLVIMENTO_DE_MATERIAL_DIDATICO_OU_INSTRUCIONAL: educational_and_instructional_material_development
+    PRODUTO_TECNOLOGICO: product_development
+    PROCESSOS_OU_TECNICAS: technic_development
+    EDITORACAO: edition
+    MANUTENCAO_DE_OBRA_ARTISTICA: artistic_work_maintenance
+    MAQUETE: model
+    ORGANIZACAO_DE_EVENTO: event_organization
+    PATENTE: patent
+    PROGRAMA_DE_RADIO_OU_TV: tv_or_radio_show
+    RELATORIO_DE_PESQUISA: research_report
+    TRABALHO_TECNICO: technical_service
+    # orientation
+    ORIENTACOES_CONCLUIDAS_PARA_MESTRADO: dissertation
+    ORIENTACOES_CONCLUIDAS_PARA_DOUTORADO: thesis
+
+  roles:
+    adjunct_coordinator: Coordenador Adjunto
+    coordinator: Coordenador
+    teacher: Docente Permanente
+    researcher: Pesquisador
+    student: Discente
+    visiting_teacher: Docente Visitante
+    professional_adjunct_coordinator: Coordenador Adjunto Profissional
+    external_participant: Participante Externo
+    without_role: Sem Enquadramento
+
+    professor: Docente Permanente
+    colaborator: Docente Colaborador
+    visiting_professor: Docente Visitante
+    external_co_author: Participante Externo
+    other: Participante Externo
+    external_examinator: Participante Externo
+    co_advisor: Participante Externo
+    student: Discente
+    post_doctoral: Discente
+    without_role: Sem Enquadramento
+
+  sources:
+    lattes: Lattes
+    sucupira: Sucupira
+    dgp: DGP

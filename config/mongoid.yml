@@ -1,0 +1,26 @@
+production:
+  clients:
+    default:
+      uri: <%= ENV['MONGODB_URI'] %>
+
+development:
+  options:
+    # raise_not_found_error: false
+  clients:
+    default:
+      database: test_api
+      hosts:
+        - localhost:27017
+      options:
+        max_pool_size: 16
+
+test:
+  clients:
+    default:
+      database: test_api
+      hosts:
+        - localhost:27017
+      options:
+        read: primary
+        max_retries: 1
+        retry_interval: 0

@@ -1,0 +1,2 @@
+class LecturesController < CollectionController
+end
