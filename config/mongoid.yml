@@ -1,18 +1,14 @@
 production:
   clients:
     default:
-      uri: <%= ENV['MONGODB_URI'] %>
+      uri: mongodb+srv://arthursiqueiras:indeorum123@cluster0-lyyfi.mongodb.net/test?retryWrites=true&w=majority
 
 development:
   options:
     # raise_not_found_error: false
   clients:
     default:
-      database: semana_academica
-      hosts:
-        - localhost:27017
-      options:
-        max_pool_size: 16
+      uri: mongodb+srv://arthursiqueiras:indeorum123@cluster0-lyyfi.mongodb.net/test?retryWrites=true&w=majority
 
 test:
   clients:
