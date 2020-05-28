@@ -9,10 +9,6 @@ gem 'rails', '~> 5.2.3'
 gem 'puma', '~> 3.11'
 gem 'mongoid'
 gem 'kaminari-mongoid'
-gem 'omniauth'
-gem 'omniauth-cas'
-
-gem 'http'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'

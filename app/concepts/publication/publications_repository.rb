@@ -1,0 +1,2 @@
+class PublicationsRepository < CollectionRepository
+end
