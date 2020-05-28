@@ -1,4 +1,4 @@
-class ParticipantTokenController < Knock::AuthTokenController
+class UserTokenController < Knock::AuthTokenController
   skip_before_action :verify_authenticity_token
 
   def create
@@ -14,10 +14,10 @@ class ParticipantTokenController < Knock::AuthTokenController
 
     response.set_cookie(
       :'auth._token.local',
-      ParticipantTokenRepresenter.decorate(auth_token.token, expiration)
+      UserTokenRepresenter.decorate(auth_token.token, expiration)
     )
 
-    user = Participant.find(auth_token.payload[:sub])
+    user = User.find(auth_token.payload[:sub])
     user.update({ token: auth_token.token })
   end
 end

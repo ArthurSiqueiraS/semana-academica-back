@@ -1,14 +1,16 @@
 class ApplicationController < ActionController::API
   include Knock::Authenticable
-  before_action :authenticate_participant
-  attr_accessor :current_participant
+  before_action :authenticate_user
+  attr_accessor :current_user
 
-  def authenticate_participant
-    token = request.headers['Authorization'].split.last
-    return unauthorized unless token.present?
+  def authenticate_user
+    auth = request.headers['Authorization'] || request.cookies['auth._token.local']
+    return unauthorized unless auth.present?
+
+    token = auth.split.last
 
     begin
-      self.current_participant = Participant.find_by(token: token)
+      self.current_user = User.find_by(token: token)
     rescue Mongoid::Errors::DocumentNotFound
       return unauthorized
     end

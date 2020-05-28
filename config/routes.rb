@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  post 'login' => 'participant_token#create'
+  post 'login' => 'user_token#create'
+	get 'user' => 'sessions#user'
 
   # Collection routes
 	resources :publications, only: [:index, :show]
