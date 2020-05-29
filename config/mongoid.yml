@@ -1,7 +1,7 @@
 production:
   clients:
     default:
-      uri: mongodb+srv://arthursiqueiras:indeorum123@cluster0-lyyfi.mongodb.net/test?retryWrites=true&w=majority
+      uri: <%= ENV['MONGODB_URI'] %>
 
 development:
   options:
