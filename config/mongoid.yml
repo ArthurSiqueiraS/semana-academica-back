@@ -8,7 +8,7 @@ development:
     # raise_not_found_error: false
   clients:
     default:
-      uri: mongodb+srv://arthursiqueiras:indeorum123@cluster0-lyyfi.mongodb.net/test?retryWrites=true&w=majority
+      uri: mongodb+srv://arthursiqueiras:indeorum123@cluster0-rpte7.mongodb.net/test?retryWrites=true&w=majority
 
 test:
   clients:
