@@ -4,6 +4,8 @@ class UserTokenController < Knock::AuthTokenController
   def create
     sign_in
 
+    ActionCable.server.broadcast('session', { user: { id: auth_token.payload[:sub].to_s }, token: auth_token.token })
+
     render json: { token: auth_token.token, payload: auth_token.payload }, status: :created
   end
 
