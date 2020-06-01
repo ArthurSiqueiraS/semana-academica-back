@@ -8,15 +8,11 @@ development:
     # raise_not_found_error: false
   clients:
     default:
-      uri: mongodb+srv://arthursiqueiras:indeorum123@cluster0-rpte7.mongodb.net/test?retryWrites=true&w=majority
-
-test:
-  clients:
-    default:
       database: semana_academica
       hosts:
         - localhost:27017
-      options:
-        read: primary
-        max_retries: 1
-        retry_interval: 0
+
+test:
+  clients:
+      default:
+        uri: mongodb+srv://arthursiqueiras:indeorum123@cluster0-rpte7.mongodb.net/test?retryWrites=true&w=majority
