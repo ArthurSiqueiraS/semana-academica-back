@@ -6,4 +6,8 @@ class Lecture
   field :schedule_time, type: Time
   field :link, type: String
   field :thumbnail, type: String
+
+  validates :title, presence: true
+  validates :speaker, presence: true
+  validates :description, presence: true
 end
