@@ -2,8 +2,10 @@ Faker::Config.locale = 'pt-BR'
 
 times = [[9, 0], [10, 30], [13, 30], [15,0], [16, 30]]
 
-User.create(email: 'teste@sam.com', password: 'sam2020')
-User.create(email: 'admin@sam.com', password: 'sam2020', admin: true)
+if User.empty?
+  User.create(email: 'teste@sam.com', password: 'sam2020')
+  User.create(email: 'admin@sam.com', password: 'sam2020', admin: true)
+end
 
 [27, 28, 29, 30, 31].each do |day|
   Array(0..4).each do |i|

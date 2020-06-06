@@ -16,4 +16,14 @@ class LecturesController < CollectionController
 
     render status: 201
   end
+
+  def destroy
+    unless params[:ids].present?
+      Lecture.delete_all
+    else
+      Lecture.where(id: { '$in': params[:ids] }).delete
+    end
+
+    render status: 200
+  end
 end
