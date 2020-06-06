@@ -3,6 +3,10 @@ class ImageUpload
     def upload(file, folder = '')
       acc = 0
       absolute_path = Dir.pwd + '/public'
+      folder = '/local' + folder
+
+      FileUtils.mkdir_p(absolute_path + folder)
+
       relative_path = "#{folder}/#{acc}_#{file.original_filename}"
       while File.exists? "#{absolute_path}#{relative_path}"
         acc += 1

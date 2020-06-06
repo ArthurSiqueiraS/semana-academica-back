@@ -18,11 +18,17 @@ class LecturesController < CollectionController
   end
 
   def destroy
-    unless params[:ids].present?
-      Lecture.delete_all
-    else
-      Lecture.where(id: { '$in': params[:ids] }).delete
+    lectures_query = {}
+    lectures_query[:id] = { '$in': params[:ids] } if params[:ids]
+
+    lectures = Lecture.where(lectures_query)
+    thumbnails = lectures.pluck(:thumbnail)
+
+    thumbnails.each do |thumbnail|
+      File.delete("#{Dir.pwd}/public#{thumbnail}")
     end
+
+    lectures.delete
 
     render status: 200
   end
