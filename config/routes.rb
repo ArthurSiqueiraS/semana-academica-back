@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # Collection routes
 	resources :publications, only: [:index, :show]
-	resources :lectures, only: [:index, :show]
+	resources :lectures, only: [:index, :show, :create]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

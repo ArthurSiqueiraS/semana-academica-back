@@ -1,5 +1,7 @@
 class Lecture
   include Mongoid::Document
+  include Mongoid::Timestamps
+
   field :title, type: String
   field :speaker, type: String
   field :description, type: String
