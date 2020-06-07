@@ -22,4 +22,10 @@ class UserTokenController < Knock::AuthTokenController
     user = User.find(auth_token.payload[:sub])
     user.update({ token: auth_token.token })
   end
+
+  def authenticate
+    unless entity.present? && entity.authenticate(auth_params[:password])
+      render json: {}, status: 404
+    end
+  end
 end

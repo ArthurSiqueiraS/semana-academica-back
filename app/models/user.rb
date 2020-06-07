@@ -13,8 +13,11 @@ class User
   validates :password_digest, presence: true
 
   def self.from_token_request(request)
-    email = request.params['auth']['email']
-    
-    self.find_by(email: email.strip.downcase)
+    begin
+      email = request.params['auth']['email']
+
+      self.find_by(email: email.strip.downcase)
+    rescue
+    end
   end
 end
