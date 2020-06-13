@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 	get 'user' => 'sessions#user'
 
   # Collection routes
+	resources :users, only: [:index, :show, :create, :update]
 	resources :publications, only: [:index, :show]
   resources :lectures, only: [:index, :show, :create, :update]
   delete 'lectures' => 'lectures#destroy'

@@ -2,6 +2,9 @@ class User
   include ActiveModel::SecurePassword
   include Mongoid::Document
   field :email, type: String
+  field :name, type: String
+  field :student_id, type: String
+  field :cpf, type: String
   field :approved, type: Boolean, default: false
   field :password_digest, type: String
   field :admin, type: Boolean, default: false
@@ -10,13 +13,16 @@ class User
   has_secure_password
 
   validates :email, presence: true, uniqueness: { message: 'E-mail já cadastrado' }
+  validates :student_id, presence: true, uniqueness: true
+  validates :cpf, presence: true, uniqueness: true
+  validates :name, presence: true
   validates :password_digest, presence: true
 
   def self.from_token_request(request)
     begin
-      email = request.params['auth']['email']
+      login = request.params['auth']['login']
 
-      self.find_by(email: email.strip.downcase)
+      self.find_by('$or': [{ email: login.strip.downcase }, { student_id: login }])
     rescue
     end
   end
