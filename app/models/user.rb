@@ -5,7 +5,7 @@ class User
   field :name, type: String
   field :student_id, type: String
   field :cpf, type: String
-  field :approved, type: Boolean, default: false
+  field :approved, type: Boolean, default: nil
   field :password_digest, type: String
   field :admin, type: Boolean, default: false
   field :token, type: String

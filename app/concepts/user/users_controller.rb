@@ -12,4 +12,12 @@ class UsersController < CollectionController
 
     render status: 201
   end
+
+  def update
+    user = User.find(params[:id])
+
+    user.update(approved: params[:approved])
+
+    render status: 200
+  end
 end
