@@ -22,7 +22,7 @@ class User
     begin
       login = request.params['auth']['login']
 
-      self.find_by('$or': [{ email: login.strip.downcase }, { student_id: login }])
+      self.find_by(email: login.strip.downcase)
     rescue
     end
   end
