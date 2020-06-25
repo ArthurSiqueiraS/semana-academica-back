@@ -3,10 +3,10 @@ class UsersRepresenter::Maintenance < UsersRepresenter
     {
       id: user.id.to_s,
       name: user.name,
-      email: user.name,
-      studentId: user.student_id,
+      email: user.email,
+      # studentId: user.student_id,
       cpf: user.cpf,
-      approved: user.approved
+      # approved: user.approved
     }
   end
 end

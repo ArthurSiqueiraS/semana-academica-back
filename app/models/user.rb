@@ -3,9 +3,9 @@ class User
   include Mongoid::Document
   field :email, type: String
   field :name, type: String
-  field :student_id, type: String
+  # field :student_id, type: String
   field :cpf, type: String
-  field :approved, type: Boolean, default: nil
+  # field :approved, type: Boolean, default: nil
   field :password_digest, type: String
   field :admin, type: Boolean, default: false
   field :token, type: String
@@ -13,7 +13,7 @@ class User
   has_secure_password
 
   validates :email, presence: true, uniqueness: { message: 'E-mail já cadastrado' }
-  validates :student_id, presence: true, uniqueness: true
+  # validates :student_id, presence: true, uniqueness: true
   validates :cpf, presence: true, uniqueness: true
   validates :name, presence: true
   validates :password_digest, presence: true

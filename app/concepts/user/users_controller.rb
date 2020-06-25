@@ -5,7 +5,7 @@ class UsersController < CollectionController
     User.create(
       name: params[:name],
       email: params[:email],
-      student_id: params[:studentId],
+      # student_id: params[:studentId],
       cpf: params[:cpf],
       password: params[:password]
     )
