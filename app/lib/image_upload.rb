@@ -4,7 +4,6 @@ class ImageUpload
       acc = 0
       absolute_path = Dir.pwd + '/public'
       folder = '/local' + folder
-
       FileUtils.mkdir_p(absolute_path + folder)
 
       relative_path = "#{folder}/#{acc}_#{file.original_filename}"
@@ -14,7 +13,7 @@ class ImageUpload
       end
 
       FileUtils.mv(file.path, "#{absolute_path}#{relative_path}")
-
+      
       relative_path
     end
   end
