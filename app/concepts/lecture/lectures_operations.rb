@@ -4,6 +4,9 @@ class LecturesOperations < CollectionOperations
       y, m, d = params[:date].split('-')
       h, min = params[:time].split(':')
 
+      h ||= 1
+      min ||= 0
+
       lecture = {
         title: params[:title],
         speaker: params[:speaker],
