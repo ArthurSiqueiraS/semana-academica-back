@@ -22,7 +22,7 @@ class LecturesController < CollectionController
     thumbnails = lectures.pluck(:thumbnail)
 
     thumbnails.each do |thumbnail|
-      LecturesOperations.delete_thumbnail(thumbnail)
+      S3.delete_object("lectures/#{File.basename(thumbnail)}")
     end
 
     lectures.delete
