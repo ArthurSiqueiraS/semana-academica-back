@@ -15,17 +15,15 @@ class LecturesOperations < CollectionOperations
       }
 
       if params[:file].present?
-        lecture[:thumbnail] = ImageUpload.upload(params[:file], '/lectures')
+        folder = 'lectures'
+        lecture[:thumbnail] = S3.upload(params[:file], folder)
         if params[:id]
-          delete_thumbnail(Lecture.find(params[:id]).thumbnail)
+          thumbnail = Lecture.find(params[:id]).thumbnail
+          S3.delete_object("#{folder}/#{File.basename(thumbnail)}")
         end
       end
 
       lecture
-    end
-
-    def delete_thumbnail(thumbnail)
-      File.delete("#{Dir.pwd}/public#{thumbnail}")
     end
   end
 end
