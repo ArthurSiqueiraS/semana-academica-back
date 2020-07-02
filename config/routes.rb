@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   # Collection routes
 	resources :users, only: [:index, :show, :create, :update]
-	resources :publications, only: [:index, :show]
+	resources :publications, only: [:index, :show, :create, :update]
+  delete 'publications' => 'publications#destroy'
   resources :lectures, only: [:index, :show, :create, :update]
   delete 'lectures' => 'lectures#destroy'
 
