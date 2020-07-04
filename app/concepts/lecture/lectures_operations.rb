@@ -2,7 +2,7 @@ class LecturesOperations < CollectionOperations
   class << self
     def parse_params(params)
       y, m, d = params[:date].split('-')
-      h, min = params[:time].split(':')
+      h, min = (params[:time] || '').split(':')
 
       h ||= 1
       min ||= 0
@@ -12,6 +12,7 @@ class LecturesOperations < CollectionOperations
         speaker: params[:speaker],
         description: params[:description],
         schedule_time: Time.new(y, m, d, h.to_i - 1, min),
+        live: params[:live]
       }
 
       if params[:file].present?

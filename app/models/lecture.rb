@@ -6,7 +6,7 @@ class Lecture
   field :speaker, type: String
   field :description, type: String
   field :schedule_time, type: Time
-  field :link, type: String
+  field :live, type: String
   field :thumbnail, type: String
 
   validates :title, presence: true
