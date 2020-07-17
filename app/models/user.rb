@@ -22,7 +22,7 @@ class User
     begin
       login = request.params['auth']['login']
 
-      self.find_by(email: login.strip.downcase)
+      self.find_by(email: normalize_email(login))
     rescue
     end
   end
