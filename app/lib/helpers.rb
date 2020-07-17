@@ -28,3 +28,7 @@ end
 def print_key_value(k, v)
   puts "#{k}: #{v}"
 end
+
+def normalize_email(email)
+  email.strip.downcase
+end

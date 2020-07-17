@@ -4,7 +4,7 @@ class UsersController < CollectionController
   def create
     User.create(
       name: params[:name],
-      email: params[:email],
+      email: normalize_email(params[:email]),
       # student_id: params[:studentId],
       cpf: params[:cpf],
       password: params[:password]
