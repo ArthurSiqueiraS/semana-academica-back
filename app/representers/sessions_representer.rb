@@ -3,7 +3,7 @@ class SessionsRepresenter < CollectionRepresenter
     {
       id: user.id.to_s,
       admin: user.admin,
-      # approved: user.approved,
+      presence: user.presence,
       name: user.name
     }
   end

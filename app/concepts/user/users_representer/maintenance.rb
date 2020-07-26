@@ -4,9 +4,8 @@ class UsersRepresenter::Maintenance < UsersRepresenter
       id: user.id.to_s,
       name: user.name,
       email: user.email,
-      # studentId: user.student_id,
       cpf: user.cpf,
-      # approved: user.approved
+      presence: user.presence
     }
   end
 end

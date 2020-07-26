@@ -7,4 +7,8 @@ class SessionChannel < ApplicationCable::Channel
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
   end
+
+  def update_event
+    ActionCable.server.broadcast('session', 'update_event')
+  end
 end

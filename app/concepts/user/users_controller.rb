@@ -13,10 +13,10 @@ class UsersController < CollectionController
     render status: 201
   end
 
-  def update
+  def check_presence
     user = User.find(params[:id])
 
-    user.update(approved: params[:approved])
+    user.update(presence: true)
 
     render status: 200
   end

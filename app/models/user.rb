@@ -9,6 +9,7 @@ class User
   field :password_digest, type: String
   field :admin, type: Boolean, default: false
   field :token, type: String
+  field :presence, type: Boolean, default: false
 
   has_secure_password
 
