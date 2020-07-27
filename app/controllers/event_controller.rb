@@ -8,6 +8,10 @@ class EventController < ApplicationController
   def update
     Event.first.update(online: params[:online])
 
+    if(!params[:online])
+      User.update_all(presence: false)
+    end
+
     render status: 200
   end
 end
