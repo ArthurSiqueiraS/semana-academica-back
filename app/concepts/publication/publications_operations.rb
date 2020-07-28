@@ -24,7 +24,6 @@ class PublicationsOperations < CollectionOperations
 
       coverFile = params[:coverFile]
       if coverFile
-        byebug
         image = MiniMagick::Image.open(coverFile.path)
         image.resize('600x800')
         poster[:cover] = S3.upload(image.path, folder)
