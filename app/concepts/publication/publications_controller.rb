@@ -2,14 +2,15 @@ class PublicationsController < CollectionController
   skip_before_action :authenticate_user, only: [:index]
 
   def create
-    Publication.create(poster: PublicationsOperations.upload_poster(params))
+    id = BSON::ObjectId.new
+    Publication.create(({ id: id }).merge(PublicationsOperations.upload_poster(params, id)))
 
     render status: 201
   end
 
   def update
     publication = Publication.find(params[:id])
-    publication.update(poster: PublicationsOperations.upload_poster(params))
+    publication.update(PublicationsOperations.upload_poster(params))
 
     render status: 200
   end

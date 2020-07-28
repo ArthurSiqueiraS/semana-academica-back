@@ -3,7 +3,8 @@ class PublicationsRepresenter < CollectionRepresenter
         {
           id: publication.id.to_s,
           link: "/publications/#{publication.id.to_s}",
-          poster: publication.poster
+          pdf: publication.pdf,
+          cover: publication.cover
         }
       end
 end
