@@ -13,15 +13,23 @@ class PublicationsOperations < CollectionOperations
   end
 
   class << self
-    def upload_poster(params)
-      folder = 'posters'
-      poster = S3.upload(params[:file], folder)
-      if params[:id]
-        old_poster = Publication.find(params[:id]).poster
-        S3.delete_object("#{folder}/#{File.basename(old_poster)}")
+    def upload_poster(params, id=nil)
+      id ||= params[:id]
+
+      pdfFile = params[:pdfFile]
+
+      if pdfFile
+        folder = "posters/#{id.to_s}"
+        pdf = S3.upload(pdfFile.path, folder)
+
+        if params[:id]
+          old_poster = Publication.find(params[:id])
+
+          S3.delete_object("#{folder}/#{File.basename(old_poster.pdf)}") if pdfFile
+        end
       end
 
-      poster
+      pdf
     end
   end
 end

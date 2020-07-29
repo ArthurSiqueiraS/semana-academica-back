@@ -17,7 +17,7 @@ class LecturesOperations < CollectionOperations
 
       if params[:file].present?
         folder = 'lectures'
-        lecture[:thumbnail] = S3.upload(params[:file], folder)
+        lecture[:thumbnail] = S3.upload(params[:file].path, folder)
         if params[:id]
           thumbnail = Lecture.find(params[:id]).thumbnail
           S3.delete_object("#{folder}/#{File.basename(thumbnail)}")
