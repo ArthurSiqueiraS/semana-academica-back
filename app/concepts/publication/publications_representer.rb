@@ -4,7 +4,7 @@ class PublicationsRepresenter < CollectionRepresenter
           id: publication.id.to_s,
           link: "/publications/#{publication.id.to_s}",
           pdf: publication.pdf,
-          cover: publication.cover
+          title: publication.title
         }
       end
 end

@@ -3,14 +3,14 @@ class PublicationsController < CollectionController
 
   def create
     id = BSON::ObjectId.new
-    Publication.create(({ id: id }).merge(PublicationsOperations.upload_poster(params, id)))
+    Publication.create(id: id, title: params[:title], pdf: PublicationsOperations.upload_poster(params, id))
 
     render status: 201
   end
 
   def update
     publication = Publication.find(params[:id])
-    publication.update(PublicationsOperations.upload_poster(params))
+    publication.update(title: params[:title], pdf: PublicationsOperations.upload_poster(params))
 
     render status: 200
   end
@@ -23,7 +23,6 @@ class PublicationsController < CollectionController
 
     publications.each do |publication|
       S3.delete_object("publications/#{publication.id}/#{File.basename(publication.pdf)}")
-      S3.delete_object("publications/#{publication.id}/#{File.basename(publication.cover)}")
     end
 
     publications.delete

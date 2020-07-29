@@ -1,5 +1,5 @@
 class Publication
   include Mongoid::Document
+  field :title, type: String
   field :pdf, type: String
-  field :cover, type: String
 end
