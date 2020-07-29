@@ -20,10 +20,10 @@ class PublicationsController < CollectionController
     publications_query[:id] = { '$in': params[:ids] } if params[:ids]
 
     publications = Publication.where(publications_query)
-    posters = publications.pluck(:poster)
 
-    posters.each do |poster|
-      S3.delete_object("publications/#{File.basename(poster)}")
+    publications.each do |publication|
+      S3.delete_object("publications/#{publication.id}/#{File.basename(publication.pdf)}")
+      S3.delete_object("publications/#{publication.id}/#{File.basename(publication.cover)}")
     end
 
     publications.delete
